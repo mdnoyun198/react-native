@@ -1,0 +1,42 @@
+# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+
+# Ignores dependencies in any sub-folder/project
+**/node_modules/
+
+# Ignores Expo builds & environment in any project
+**/.expo/
+**/dist/
+**/web-build/
+**/expo-env.d.ts
+
+# Ignores generated Native folders (Android & iOS) in any project
+**/ios/
+**/android/
+
+# Native key files & keystores
+**/.kotlin/
+**/*.orig.*
+**/*.jks
+**/*.p8
+**/*.p12
+**/*.key
+**/*.mobileprovision
+
+# Metro bundler cache
+**/.metro-health-check*
+
+# Debug logs
+**/npm-debug.*
+**/yarn-debug.*
+**/yarn-error.*
+
+# OS specific files
+**/.DS_Store
+**/*.pem
+
+# Local env files (Secrets)
+**/.env*.local
+**/.env
+
+# TypeScript build info
+**/*.tsbuildinfo
