@@ -1,56 +1,104 @@
-# Welcome to your Expo app 👋
+# 🚀 React Native Practice: Minimalist Setup
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is a practice repository for learning **React Native** and **Expo Router**. I have removed all unnecessary boilerplate files to create a clean slate and built a minimal architecture featuring custom layouts, a basic API route, and a simple UI component.
 
-## Get started
+---
 
-1. Install dependencies
+## 🛠️ Setup Instructions
 
+1. **Install dependencies:**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. **Start the development server:**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+---
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📂 Modified Files & Code Examples
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Below are the core files I have modified to establish this minimal foundation.
 
-## Get a fresh project
+### 1. Root Layout (`app/_layout.tsx`)
+This layout handles global theme management (Light/Dark mode) using React Navigation and wraps all child routes using Expo Router's `<Slot />`.
 
-When you're ready, run:
+```tsx
+import { ThemeProvider, DarkTheme, DefaultTheme } from '@react-navigation/native';
+import { useColorScheme } from 'react-native';
+import { Slot } from 'expo-router';
 
-```bash
-npm run reset-project
+export default function RootLayout() {
+  const colorScheme = useColorScheme();
+
+  return (
+    <ThemeProvider 'dark' : ? DarkTheme DefaultTheme} value="{colorScheme">
+      <Slot/>
+    </ThemeProvider>
+  );
+}
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Main Screen (`app/index.tsx`)
+This is the default entry screen. It demonstrates standard React Native layout components (`SafeAreaView`, `View`, `Text`, `Button`) and handles a basic API fetch request to the local Expo server.
 
-### Other setup steps
+```tsx
+import { useState } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+export default function HomeScreen() {
+  const [message, setMessage] = useState('Press the button to test API');
 
-## Learn more
+  const handleGet = async () => {
+    try {
+      const res = await fetch('/api/test');
+      const data = await res.json();
+      setMessage(data.message);
+    } catch (error) {
+      setMessage('Failed to fetch API endpoint');
+    }
+  };
 
-To learn more about developing your project with Expo, look at the following resources:
+  return (
+    <SafeAreaView style="{styles.safeArea}">
+      <View style="{styles.container}">
+        <Text style="{styles.text}">{message}</Text>
+        <Button onPress="{handleGet}" title="Click Me"/>
+      </View>
+    </SafeAreaView>
+  );
+}
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 16,
+  },
+  text: {
+    fontSize: 18,
+    marginBottom: 20,
+    textAlign: 'center',
+  },
+});
+```
 
-## Join the community
+### 3. API Route (`app/api/test/+api.ts`)
+This demonstrates Expo Router's server-side API capabilities, functioning similarly to Next.js API routes using Web Standard request/response objects.
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```typescript
+export async function GET(request: Request) {
+  return Response.json({
+    status: 200,
+    message: 'Hello from Expo API Route!',
+    timestamp: new Date().toISOString(),
+  });
+}
+```

@@ -40,3 +40,5 @@
 
 # TypeScript build info
 **/*.tsbuildinfo
+**/.vscode/
+**/.claude/

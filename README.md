@@ -6,27 +6,33 @@
 <table width="100%">
   <tr>
     <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60px"/><br/>
-      <b>React Native</b>
+      <a href="https://reactnative.dev" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60px"/><br/>
+        <b>React Native</b>
+      </a>
     </td>
     <td align="center" width="33%">
-      <img src="https://avatars.githubusercontent.com/u/12504344?v=4" width="60px" style="border-radius: 10px;"/><br/>
-      <b>Expo</b>
+      <a href="https://docs.expo.dev" target="_blank">
+        <img src="https://avatars.githubusercontent.com/u/12504344?v=4" width="60px" style="border-radius: 10px;"/><br/>
+        <b>Expo</b>
+      </a>
     </td>
     <td align="center" width="33%">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="60px"/><br/>
-      <b>NativeWind</b>
+      <a href="https://www.nativewind.dev" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="60px"/><br/>
+        <b>NativeWind</b>
+      </a>
     </td>
   </tr>
 </table>
 
 <br>
 
-### 🛠️ Technology
+### 🛠️ Technology & Documentation
 
-- **React Native** (Core Framework)
-- **Expo** (Meta-Framework)
-- **NativeWind / StyleSheet** (Styling)
+- **[React Native](https://reactnative.dev)** (Core Framework)
+- **[Expo](https://docs.expo.dev)** (Meta-Framework)
+- **[NativeWind](https://www.nativewind.dev) / StyleSheet** (Styling)
 
 <br>
 
