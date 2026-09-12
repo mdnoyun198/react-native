@@ -8,7 +8,7 @@
     <td align="center" width="40%">
       <a href="https://reactnative.dev" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60px"/><br/>
-        <b>React Native</b>
+        <b>ReactNative</b>
       </a>
     </td>
     <td align="center" width="30%">
