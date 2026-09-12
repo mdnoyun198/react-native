@@ -5,19 +5,19 @@
 
 <table width="100%">
   <tr>
-    <td align="center" width="33%">
+    <td align="center" width="40%">
       <a href="https://reactnative.dev" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="60px"/><br/>
         <b>React Native</b>
       </a>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="30%">
       <a href="https://docs.expo.dev" target="_blank">
         <img src="https://avatars.githubusercontent.com/u/12504344?v=4" width="60px" style="border-radius: 10px;"/><br/>
         <b>Expo</b>
       </a>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="30%">
       <a href="https://www.nativewind.dev" target="_blank">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" width="60px"/><br/>
         <b>NativeWind</b>
